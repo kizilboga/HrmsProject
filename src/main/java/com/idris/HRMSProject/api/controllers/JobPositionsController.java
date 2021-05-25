@@ -1,4 +1,4 @@
-package com.idris.HRMSProject.api.conrollers;
+package com.idris.HRMSProject.api.controllers;
 
 import java.util.List;
 
@@ -24,6 +24,6 @@ public class JobPositionsController {
 	
 	@GetMapping("/getall")
 	public List<JobPosition> getAll(){
-		return this.jobPositionService.getAll();
+		return jobPositionService.getAll();
 	}
 }

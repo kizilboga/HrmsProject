@@ -20,7 +20,7 @@ private JobPositionDao jobPositionDao;
 	@Override
 	public List<JobPosition> getAll() {
 		// TODO Auto-generated method stub
-		return this.jobPositionDao.findAll();
+		return jobPositionDao.findAll();
 	}
 
 }

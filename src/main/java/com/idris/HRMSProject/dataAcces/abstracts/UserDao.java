@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.idris.HRMSProject.entities.concretes.User;
 
-public interface UserDao extends JpaRepository<User, Integer>{
-
+public interface UserDao extends JpaRepository<User, Integer> {
+	User findByEmail(String email);
+User findByEmailAndEmailVerificationCode(String email, String emailVerfyCode);
 }

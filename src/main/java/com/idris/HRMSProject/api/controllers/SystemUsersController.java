@@ -1,8 +1,9 @@
-package com.idris.HRMSProject.api.conrollers;
+package com.idris.HRMSProject.api.controllers;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,8 +21,9 @@ public class SystemUsersController {
 		this.systemUserService = systemUserService;
 	}
 
+	@GetMapping ("getall")
 	public List<SystemUser> getAll() {
-		return this.systemUserService.getAll();
+		return systemUserService.getAll();
 
 	}
 

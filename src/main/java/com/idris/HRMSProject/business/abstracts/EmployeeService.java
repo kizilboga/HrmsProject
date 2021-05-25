@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.idris.HRMSProject.entities.concretes.Employee;
 
-@ComponentScan({"com.delivery.request"})
+
 public interface EmployeeService {
 List<Employee> getAll();
 }

@@ -1,4 +1,4 @@
-package com.idris.HRMSProject.api.conrollers;
+package com.idris.HRMSProject.api.controllers;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public class EmployersController {
 	
 	@GetMapping("/getall")
 	public List<Employer> getAll(){
-		return this.employerService.getAll();
+		return employerService.getAll();
 		
 	}
 
