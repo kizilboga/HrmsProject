@@ -6,5 +6,5 @@ import com.idris.HRMSProject.entities.concretes.User;
 
 public interface UserDao extends JpaRepository<User, Integer> {
 	User findByEmail(String email);
-User findByEmailAndEmailVerificationCode(String email, String emailVerfyCode);
+User findByEmailAndEmailVerifyCode(String email, String emailVerifyCode);
 }

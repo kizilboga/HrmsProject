@@ -14,7 +14,6 @@ import com.idris.HRMSProject.core.results.DataResult;
 import com.idris.HRMSProject.core.results.Result;
 import com.idris.HRMSProject.entities.concretes.User;
 
-
 @RestController
 @RequestMapping("/api/users")
 public class UsersController {

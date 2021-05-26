@@ -52,9 +52,9 @@ public class UserManager implements UserService{
 	}
 
 	@Override
-	public Result verifyUser(String email, String verificationCode) {
+	public Result verifyUser(String email, String emailVerifyCode) {
 		
-		User user = userDao.findByEmailAndEmailVerificationCode(email, verificationCode);
+		User user = userDao.findByEmailAndEmailVerifyCode(email, emailVerifyCode);
 		if (user== null) 
 			return new ErrorResult ("Doğrulama başarısız, lütfen bilgilerinizi tekrar giriniz!");
 
