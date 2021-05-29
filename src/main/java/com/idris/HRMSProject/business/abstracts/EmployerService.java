@@ -10,5 +10,6 @@ import com.idris.HRMSProject.entities.concretes.dtos.EmployerForRegisterDto;
 public interface EmployerService {
 	DataResult<List<Employer>> getAll();
 	Result register(EmployerForRegisterDto employer);
+	DataResult<Employer> getById(int id);
 
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.idris.HRMSProject.business.abstracts.EmployerService;
 import com.idris.HRMSProject.business.abstracts.UserService;
 import com.idris.HRMSProject.core.results.DataResult;
+import com.idris.HRMSProject.core.results.ErrorDataResult;
 import com.idris.HRMSProject.core.results.ErrorResult;
 import com.idris.HRMSProject.core.results.Result;
 import com.idris.HRMSProject.core.results.SuccessDataResult;
@@ -18,6 +19,7 @@ import com.idris.HRMSProject.dataAcces.abstracts.EmployerDao;
 import com.idris.HRMSProject.entities.concretes.Employer;
 import com.idris.HRMSProject.entities.concretes.User;
 import com.idris.HRMSProject.entities.concretes.dtos.EmployerForRegisterDto;
+
 
 @Service
 public class EmployerManager implements EmployerService {
@@ -51,6 +53,13 @@ public class EmployerManager implements EmployerService {
 		if(isEmailandWebsiteDomainSame(employer) != null) return isEmailandWebsiteDomainSame(employer);
 		if(isEmailAlreadyInUse(employer) != null) return isEmailAlreadyInUse(employer);
 		return null;
+	}
+	
+	@Override
+	public DataResult<Employer> getById(int id) {
+		Employer employer = employerDao.getOne(id);
+		if(employer==null) return new ErrorDataResult<Employer>();
+		return new SuccessDataResult<Employer>(employer);
 	}
 
 	private Result isAllFieldsFilled(EmployerForRegisterDto employer) {
